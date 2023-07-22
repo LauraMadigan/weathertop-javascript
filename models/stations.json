@@ -1,0 +1,9 @@
+{
+  "file": "./models/stations.json",
+  "stations": [
+    {
+      "title": "test",
+      "_id": "bc218008-4351-4cdf-98d8-2a2aeb01aaae"
+    }
+  ]
+}
