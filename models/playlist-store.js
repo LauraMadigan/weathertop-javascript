@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
+import { trackStore } from "./track-store.js";
 
 const db = initStore("playlists");
 
@@ -20,6 +21,7 @@ export const playlistStore = {
   async getPlaylistById(id) {
     await db.read();
     const list = db.data.playlists.find((playlist) => playlist._id === id);
+    list.tracks = await trackStore.getTracksByPlaylistId(list._id);
     return list;
   },
 
