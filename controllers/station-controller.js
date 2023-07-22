@@ -13,13 +13,13 @@ export const stationController = {
 
   async addReading(request, response) {
     const station = await stationStore.getStationById(request.params.id);
-    const newStation = {
-      title: request.body.title,
-      artist: request.body.artist,
-      duration: Number(request.body.duration),
+    const newReading = {
+      code:  Number(request.body.code),
+      temp:  Number(request.body.temp),
+      windSpeed: Number(request.body.windSpeed),
     };
-    console.log(`adding station ${newStation.title}`);
-    await readingStore.addReading(station._id, newStation);
+    console.log(`adding reading ${newReading.code}`);
+    await readingStore.addReading(station._id, newReading);
     response.redirect("/station/" + station._id);
   },
 };

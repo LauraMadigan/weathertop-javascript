@@ -7,6 +7,39 @@
       "duration": 23,
       "_id": "5e716209-45d5-4e85-a341-49ec76b6e1aa",
       "stationid": "bc218008-4351-4cdf-98d8-2a2aeb01aaae"
+    },
+    {
+      "temp": "23",
+      "windSpeed": 3.5,
+      "_id": "a7120513-4c7a-4389-9c0d-dc2f4957de93",
+      "stationid": "7df656c9-1dd8-45cb-a08e-5904c45477e6"
+    },
+    {
+      "temp": "23",
+      "windSpeed": 2.5,
+      "_id": "70bd2c33-8f2c-44a0-9dd2-afc98dc6f2fe",
+      "stationid": "7df656c9-1dd8-45cb-a08e-5904c45477e6"
+    },
+    {
+      "code": "200",
+      "temp": "23",
+      "windSpeed": 23.2,
+      "_id": "8328e4a5-bccd-4c33-bee2-994543d3c560",
+      "stationid": "7df656c9-1dd8-45cb-a08e-5904c45477e6"
+    },
+    {
+      "code": "200",
+      "temp": "23",
+      "windSpeed": 10,
+      "_id": "a6477767-3c50-4a49-8977-73c01dcea384",
+      "stationid": "4b5b6319-d7ab-4f1f-b39f-b89b0f8ee1f8"
+    },
+    {
+      "code": 0,
+      "temp": 23,
+      "windSpeed": 15,
+      "_id": "645999ac-53fe-4400-9bd4-99f2c9d7829c",
+      "stationid": "4b5b6319-d7ab-4f1f-b39f-b89b0f8ee1f8"
     }
   ]
 }
