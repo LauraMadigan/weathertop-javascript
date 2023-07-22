@@ -1,0 +1,49 @@
+.card {
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    background-color: #DEF0EE;
+}
+
+.hero {
+    background-color: #025959;
+}
+
+.hero .title {
+    color: #ffffff;
+}
+
+.navbar-item {
+    color: #ffffff;
+    font-size: larger;
+}
+
+.navbar {
+    background-color: #6CC5C6;
+}
+
+a.navbar-item:hover {
+    color: #025959;
+}
+
+.subTitle {
+    color: #DEF0EE;
+}
+
+.button {
+    background-color: #025959;
+    color: white;
+}
+
+.button:hover {
+    color: white;
+}
+
+.footer {
+    background-color: #6CC5C6;
+}
+
+.fa-arrow-down, .fa-arrow-up {
+    position: absolute;
+    bottom: 1em;
+}
