@@ -1,9 +1,12 @@
+{{> latest-readings station }}
+
 <table class="table is-fullwidth">
   <thead>
     <tr>
       <th>Weather Code</th>
       <th>Temperature (°C)</th>
-      <th>Wind Speed (km/ph)</th>
+      <th>Wind (Bft)</th>
+      <th>Pressure (hPa)</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +20,9 @@
       </td>
       <td>
         {{windSpeed}}
+      </td>
+      <td>
+        {{pressure}}
       </td>
     </tr>
     {{/each}}

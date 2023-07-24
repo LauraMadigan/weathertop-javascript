@@ -1,0 +1,85 @@
+<div class="columns">
+  <!--Location card-->
+  <div class="column is-align-items-stretch">
+    <div class="card">
+      <div class="card-content">
+        <div class="content has-text-centered">
+          <span class="icon">
+            <i class="fa fa-location-dot fa-2x"></i>
+          </span>
+          <h3>Location</h3>
+          {{name}}<br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Weather conditions card-->
+  <div class="column">
+    <div class="card">
+      <div class="card-content">
+        <div class="content has-text-centered">
+          <span class="icon">
+            <i class="fa fa-sun fa-2x"></i>
+          </span>
+          <h3>Weather</h3>
+          {{latestReading.condition}}<br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Temperature card-->
+  <div class="column">
+    <div class="card">
+      <div class="card-content">
+        <div class="content has-text-centered">
+          <span class="icon">
+            <i class="fa fa-temperature-half fa-2x"></i>
+          </span>
+          <h3>Temperature</h3>
+          {{latestReading.temp}} °C<br>
+          {{latestReading.tempF}} °F<br>
+          <br>
+          <span class="icon">
+          <i class="fa ${_station.selectTemperatureArrowTrendIcon()} fa-2x"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Wind card-->
+  <div class="column">
+    <div class="card">
+      <div class="card-content">
+        <div class="content has-text-centered">
+          <span class="icon">
+            <i class="wi wi-wind ${_station.latestReading().selectIconForWindDirection()} fa-3x"></i>
+          </span>
+          <h3>Wind</h3>
+          {{latestReading.beaufort}} bft<br>
+          <br>
+          <span class="icon">
+          <i class="fa ${_station.selectWindArrowTrendIcon()} fa-2x"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Air pressure card-->
+  <div class="column">
+    <div class="card">
+      <div class="card-content">
+        <div class="content has-text-centered">
+          <span class="icon">
+            <i class="fa fa-gauge fa-2x"></i>
+          </span>
+          <h3>Pressure</h3>
+          {{latestReading.pressure}} °hPa<br>
+          <br>
+          <span class="icon">
+          <i class="fa ${_station.selectPressureArrowTrendIcon()} fa-2x"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

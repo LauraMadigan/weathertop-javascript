@@ -23,6 +23,12 @@ export const readingStore = {
     return db.data.readings.filter((reading) => reading.stationid === id);
   },
 
+  async getLatestReadingByStationId(id) {
+    await db.read();
+    let readings = db.data.readings.filter((reading) => reading.stationid === id);
+    return readings[0];
+  },
+
   async getReadingById(id) {
     await db.read();
     return db.data.readings.find((reading) => reading._id === id);

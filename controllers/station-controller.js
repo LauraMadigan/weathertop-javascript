@@ -17,6 +17,7 @@ export const stationController = {
       code:  Number(request.body.code),
       temp:  Number(request.body.temp),
       windSpeed: Number(request.body.windSpeed),
+      pressure: Number(request.body.pressure),
     };
     console.log(`adding reading ${newReading.code}`);
     await readingStore.addReading(station._id, newReading);

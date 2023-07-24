@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
+import { beaufort, CelsiusToFarenheit, describeConditions } from "../utils/conversions.js";
 import { readingStore } from "./reading-store.js";
 
 const db = initStore("stations");
@@ -22,6 +23,10 @@ export const stationStore = {
     await db.read();
     const list = db.data.stations.find((station) => station._id === id);
     list.readings = await readingStore.getReadingsByStationId(list._id);
+    list.latestReading = await readingStore.getLatestReadingByStationId(list._id);
+    list.latestReading.beaufort = beaufort(list.latestReading.windSpeed);
+    list.latestReading.tempF = CelsiusToFarenheit(list.latestReading.temp);
+    list.latestReading.condition = describeConditions(list.latestReading.code);
     return list;
   },
 
