@@ -1,1 +1,1 @@
-# Weathertop version 1: starter
+# Weathertop: release 1
