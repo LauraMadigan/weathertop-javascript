@@ -1,9 +1,8 @@
 {{#each stations}}
 <div class="box box-link-hover-shadow">
-  <h2 class="title">
-    <a href="/station/{{_id}}">
-      {{name}}
+  <h2 class="title">{{name}}</h2>
+    <a class="button" href="/station/{{_id}}">
+      <span class="icon"><i class="fa fa-file"></i></span>
     </a>
-  </h2>
 </div>
 {{/each}}

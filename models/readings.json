@@ -6,6 +6,7 @@
       "temp": 0.5,
       "windSpeed": 3.5,
       "pressure": 1002,
+      "windDirection": 90,
       "_id": "ed540ea8-5580-4759-8b83-89cfd4e2812e",
       "stationid": "76382221-13d2-4135-953b-9307793988de"
     },
@@ -14,6 +15,7 @@
       "temp": 6,
       "windSpeed": 2,
       "pressure": 1004,
+      "windDirection": 96,
       "_id": "2017c413-6752-4efc-9c31-a6d5efe1c007",
       "stationid": "76382221-13d2-4135-953b-9307793988de"
     },
@@ -22,6 +24,7 @@
       "temp": 8,
       "windSpeed": 1,
       "pressure": 1005,
+      "windDirection": 101,
       "_id": "485f4211-83ac-4251-ad54-ae018d86a79a",
       "stationid": "bd3ade48-37af-47ab-a033-aae19c07c287"
     },
@@ -30,30 +33,9 @@
       "temp": 0.5,
       "windSpeed": 3.5,
       "pressure": 1000,
+      "windDirection": 98,
       "_id": "e2884c0c-308a-44da-a3fd-cf341407c9a1",
       "stationid": "bd3ade48-37af-47ab-a033-aae19c07c287"
-    },
-    {
-      "code": 400,
-      "temp": 7,
-      "windSpeed": 5,
-      "_id": "466dee9c-eeb0-445b-a02d-82f2ecfc6fe3",
-      "stationid": "76382221-13d2-4135-953b-9307793988de"
-    },
-    {
-      "code": 400,
-      "temp": 7,
-      "windSpeed": 5,
-      "_id": "720a5147-c3b8-4f85-a35c-6cc6bad0e2ab",
-      "stationid": "76382221-13d2-4135-953b-9307793988de"
-    },
-    {
-      "code": 200,
-      "temp": 23,
-      "windSpeed": 15,
-      "pressure": 1000,
-      "_id": "e755d508-1cdf-4301-b2af-f25e63bfa1ab",
-      "stationid": "76382221-13d2-4135-953b-9307793988de"
     }
   ]
 }
