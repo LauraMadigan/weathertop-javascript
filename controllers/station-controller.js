@@ -8,7 +8,11 @@ export const stationController = {
       title: "Station",
       station: station,
     };
-    response.render("station-view", viewData);
+    if (station.readings.length > 0) {
+      response.render("station-view", viewData);
+    } else {
+      response.render("station-view-no-readings", viewData);
+    }
   },
 
   async addReading(request, response) {
@@ -17,6 +21,7 @@ export const stationController = {
       code:  Number(request.body.code),
       temp:  Number(request.body.temp),
       windSpeed: Number(request.body.windSpeed),
+      windDirection: Number(request.body.windDirection),
       pressure: Number(request.body.pressure),
     };
     console.log(`adding reading ${newReading.code}`);

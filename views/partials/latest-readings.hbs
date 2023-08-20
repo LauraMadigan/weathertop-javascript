@@ -1,12 +1,39 @@
 <div class="columns">
   <!--Location card-->
-  {{> card title="Location" valueA=name iconClass="fa fa-location-dot"}}
+  {{> card title="Location" 
+    valueA=name valueC="Latitude: " 
+    valueD=lat valueE="Longitude: " 
+    valueF=long iconClass="fa fa-location-dot"}}
   <!--Weather conditions card-->
-  {{> card title="Conditions" valueA=latestReading.condition iconClass="fa fa-sun"}}
+  {{> card title="Conditions"
+    valueA=latestReading.condition iconClass="fa fa-sun"}}
   <!--Temperature card-->
-  {{> card title="Temperature" valueA=latestReading.temp valueB="°C" valueC=latestReading.tempF valueD="°F" iconClass="fa fa-temperature-half"}}
+  {{> card title="Temperature"
+    valueA=latestReading.temp 
+    valueB="°C" valueC=latestReading.tempF 
+    valueD="°F" valueE="Max: " 
+    valueF=latestReading.maxTemp 
+    valueH="Min: " 
+    valueI=latestReading.minTemp iconClass="fa fa-temperature-half"}}
   <!--Wind card-->
-  {{> card title="Wind" valueA=latestReading.beaufort valueB="bft" valueC=latestReading.labelWindDirection valueE="Feels like: " valueF=latestReading.windChill valueG="°C" iconClass="wi wi-wind fa-3x"}}
+  {{> card title="Wind" 
+    valueA=latestReading.beaufort
+    valueB="bft"
+    valueC=latestReading.labelWindDirection
+    valueE="Feels like: "
+    valueF=latestReading.windChill
+    valueG="°C" valueH="Max: "
+    valueI=latestReading.maxWindSpeed
+    valueJ="Min: "
+    valueK=latestReading.minWindSpeed
+    iconClass="wi wi-wind fa-3x"}}
   <!--Air pressure card-->
-  {{> card title="Pressure" valueA=latestReading.pressure valueB="°hPa" iconClass="fa fa-gauge"}}
+  {{> card title="Pressure"
+    valueA=latestReading.pressure
+    valueB="°hPa"
+    valueC="Max: "
+    valueD=latestReading.maxPressure
+    valueE="Min: "
+    valueF=latestReading.minPressure
+    iconClass="fa fa-gauge"}}
 </div>
