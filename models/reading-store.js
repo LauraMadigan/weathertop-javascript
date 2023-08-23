@@ -26,7 +26,7 @@ export const readingStore = {
   async getLatestReadingByStationId(id) {
     await db.read();
     let readings = db.data.readings.filter((reading) => reading.stationid === id);
-    return readings[0];
+    return readings[readings.length - 1];
   },
 
   async getReadingById(id) {
