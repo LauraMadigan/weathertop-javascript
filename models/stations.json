@@ -5,19 +5,35 @@
       "name": "Tramore",
       "_id": "76382221-13d2-4135-953b-9307793988de",
       "lat": 52.160858,
-      "long": -7.15242
+      "long": -7.15242,
+      "userid": "00566cd7-2994-41b2-9c0f-a2b31030ed2e"
     },
     {
       "name": "Dunmore",
       "_id": "bd3ade48-37af-47ab-a033-aae19c07c287",
       "lat": 52.14922,
-      "long": -6.99462
+      "long": -6.99462,
+      "userid": "65304f62-54b6-4a12-b86c-63fa392da6c1"
     },
     {
       "name": "New Ross",
       "lat": "52.395809",
       "long": "-6.945970",
       "_id": "80028b8a-a6e3-4e4f-9938-3d2cca918fd9"
+    },
+    {
+      "name": "Homer's Station",
+      "lat": "54120",
+      "long": "71274",
+      "userid": "00566cd7-2994-41b2-9c0f-a2b31030ed2e",
+      "_id": "b23061d9-aabd-4e9a-af75-228618925ca3"
+    },
+    {
+      "name": "Marge's Station",
+      "lat": "32124",
+      "long": "53567",
+      "userid": "65304f62-54b6-4a12-b86c-63fa392da6c1",
+      "_id": "ed1199c9-df2a-4b6b-b8f0-49a77f4c3456"
     }
   ]
 }

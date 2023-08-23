@@ -27,6 +27,11 @@ export const userStore = {
     return db.data.users.find((user) => user.email === email);
   },
 
+  async getUserByEmailAndPassword(email, password) {
+    await db.read();
+    return db.data.users.find((user) => user.email === email && user.password === password);
+  },
+
   async deleteUserById(id) {
     await db.read();
     const index = db.data.users.findIndex((user) => user._id === id);

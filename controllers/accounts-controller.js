@@ -35,7 +35,7 @@ export const accountsController = {
   },
 
   async authenticate(request, response) {
-    const user = await userStore.getUserByEmail(request.body.email);
+    const user = await userStore.getUserByEmailAndPassword(request.body.email, request.body.password)
     if (user) {
       response.cookie("user", user.email);
       console.log(`logging in ${user.email}`);
