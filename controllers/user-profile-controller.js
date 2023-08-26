@@ -1,4 +1,6 @@
 import { userStore } from "../models/user-store.js";
+import { stationStore } from "../models/station-store.js";
+
 
 export const userProfileController = {
   async profile(request, response) {
@@ -40,6 +42,15 @@ export const userProfileController = {
       success: true
     };
     response.render("user-profile-view", viewData);
+  },
+
+  async deleteUser(request, response) {
+    const userEmail = request.cookies.user;
+    let user = await userStore.getUserByEmail(userEmail); // get user with their email address
+    stationStore.deleteStationsForUser(user._id); // Delete all of the user stations
+    userStore.deleteUserById(user._id); // Delete the user
+    response.cookie("user", ""); // remove user email cookie
+    response.redirect('/');
   }
 };
 

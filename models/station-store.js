@@ -59,8 +59,15 @@ export const stationStore = {
     });
 
     db.data.stations.splice(index, 1);
-
     await db.write();
+  },
+
+  async deleteStationsForUser(userId) {
+    await db.read();
+    let userStations =  db.data.stations.filter((station) => station.userid === userId);
+    userStations.forEach(station => {
+      this.deleteStationById(station._id);
+    });
   },
 
   async deleteAllStations() {

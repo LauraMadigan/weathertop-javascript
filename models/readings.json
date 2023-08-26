@@ -1,15 +1,4 @@
 {
   "file": "./models/readings.json",
-  "readings": [
-    {
-      "code": 100,
-      "temp": 10,
-      "windSpeed": 20,
-      "windDirection": 90,
-      "pressure": 1000,
-      "_id": "17322e49-b895-47ec-87e1-ce28c7cff635",
-      "stationid": "092b3287-beb0-4f03-8d35-27ab93aa448e",
-      "timeStamp": 1693085063632
-    }
-  ]
+  "readings": []
 }

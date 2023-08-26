@@ -23,4 +23,5 @@ router.get("/logout", accountsController.logout);
 router.post("/register", accountsController.register);
 router.post("/authenticate", accountsController.authenticate);
 router.get("/profile", userProfileController.profile);
+router.get("/profile/delete", userProfileController.deleteUser);
 router.post("/profile", userProfileController.updateUser);
