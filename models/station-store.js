@@ -52,7 +52,14 @@ export const stationStore = {
   async deleteStationById(id) {
     await db.read();
     const index = db.data.stations.findIndex((station) => station._id === id);
+
+    let readings = await readingStore.getReadingsByStationId(id);
+    readings.forEach(reading => {
+      readingStore.deleteReading(reading._id);
+    });
+
     db.data.stations.splice(index, 1);
+
     await db.write();
   },
 

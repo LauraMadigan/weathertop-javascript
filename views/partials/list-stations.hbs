@@ -1,8 +1,11 @@
 {{#each stations}}
 <div class="box box-link-hover-shadow">
   <h2 class="title">{{name}}</h2>
-    <a class="button" href="/station/{{_id}}">
-      <span class="icon"><i class="fa fa-file"></i></span>
-    </a>
+  <a class="button" href="/station/{{_id}}">
+    <span class="icon"><i class="fa fa-eye"></i></span>
+  </a>
+  <a class="button is-danger" href="/station/{{_id}}/delete">
+    <span class="icon"><i class="fa fa-trash"></i></span>
+  </a>
 </div>
 {{/each}}
