@@ -2,24 +2,6 @@
   "file": "./models/readings.json",
   "readings": [
     {
-      "code": 800,
-      "temp": 0.5,
-      "windSpeed": 3.5,
-      "pressure": 1002,
-      "windDirection": 90,
-      "_id": "ed540ea8-5580-4759-8b83-89cfd4e2812e",
-      "stationid": "76382221-13d2-4135-953b-9307793988de"
-    },
-    {
-      "code": 600,
-      "temp": 6,
-      "windSpeed": 2,
-      "pressure": 1004,
-      "windDirection": 96,
-      "_id": "2017c413-6752-4efc-9c31-a6d5efe1c007",
-      "stationid": "76382221-13d2-4135-953b-9307793988de"
-    },
-    {
       "code": 700,
       "temp": 8,
       "windSpeed": 1,
@@ -36,31 +18,6 @@
       "windDirection": 98,
       "_id": "e2884c0c-308a-44da-a3fd-cf341407c9a1",
       "stationid": "bd3ade48-37af-47ab-a033-aae19c07c287"
-    },
-    {
-      "code": 500,
-      "temp": 7,
-      "windSpeed": 4,
-      "pressure": 1005,
-      "_id": "84e5b3b6-5adb-4213-8070-fdd5dd798913",
-      "stationid": "76382221-13d2-4135-953b-9307793988de"
-    },
-    {
-      "code": 200,
-      "temp": 0,
-      "windSpeed": 1.5,
-      "pressure": 1001,
-      "_id": "6db03b83-f846-4017-827e-e0f40904d432",
-      "stationid": "76382221-13d2-4135-953b-9307793988de"
-    },
-    {
-      "code": 100,
-      "temp": 8,
-      "windSpeed": 1,
-      "windDirection": 98,
-      "pressure": 1000,
-      "_id": "d5b32f8c-f5ca-4954-a8cf-14ec7229011e",
-      "stationid": "76382221-13d2-4135-953b-9307793988de"
     },
     {
       "code": 100,
@@ -81,24 +38,84 @@
       "stationid": "ed1199c9-df2a-4b6b-b8f0-49a77f4c3456"
     },
     {
-      "code": 200,
-      "temp": 23,
-      "windSpeed": 10,
-      "windDirection": 200,
-      "pressure": 1,
-      "_id": "8f970a5d-1a8f-4150-bb21-7f36d5986713",
-      "stationid": "76382221-13d2-4135-953b-9307793988de",
-      "timeStamp": 1693051129446
-    },
-    {
-      "code": 200,
-      "temp": 23,
+      "code": 100,
+      "temp": 10,
       "windSpeed": 10,
       "windDirection": 10,
       "pressure": 1000,
-      "_id": "b02aa6b8-dfff-42fb-a05a-07627ea22e0f",
+      "_id": "98e23449-7e02-485f-b44c-85147da36cb8",
       "stationid": "76382221-13d2-4135-953b-9307793988de",
-      "timeStamp": 1693052837241
+      "timeStamp": 1693076292829
+    },
+    {
+      "code": 200,
+      "temp": 11,
+      "windSpeed": 11,
+      "windDirection": 20,
+      "pressure": 1001,
+      "_id": "41af8bae-d5e6-4a09-a517-6c9ca01416ca",
+      "stationid": "76382221-13d2-4135-953b-9307793988de",
+      "timeStamp": 1693076326477
+    },
+    {
+      "code": 300,
+      "temp": 12,
+      "windSpeed": 12,
+      "windDirection": 30,
+      "pressure": 1002,
+      "_id": "6d9241f7-a831-4c21-b704-46a7b179ab78",
+      "stationid": "76382221-13d2-4135-953b-9307793988de",
+      "timeStamp": 1693076349920
+    },
+    {
+      "code": 200,
+      "temp": 13,
+      "windSpeed": 13,
+      "windDirection": 20,
+      "pressure": 1003,
+      "_id": "0298c430-ce41-4dc6-93e5-6966db022011",
+      "stationid": "76382221-13d2-4135-953b-9307793988de",
+      "timeStamp": 1693076378038
+    },
+    {
+      "code": 400,
+      "temp": 11,
+      "windSpeed": 6,
+      "windDirection": 50,
+      "pressure": 1001,
+      "_id": "30e806ff-d214-44f5-af02-de7d96127b34",
+      "stationid": "b23061d9-aabd-4e9a-af75-228618925ca3",
+      "timeStamp": 1693076591176
+    },
+    {
+      "code": 300,
+      "temp": 12,
+      "windSpeed": 7,
+      "windDirection": 40,
+      "pressure": 1000,
+      "_id": "6eab184f-7653-4f17-9bd7-84d8396b9e01",
+      "stationid": "b23061d9-aabd-4e9a-af75-228618925ca3",
+      "timeStamp": 1693076611954
+    },
+    {
+      "code": 300,
+      "temp": 13,
+      "windSpeed": 8,
+      "windDirection": 90,
+      "pressure": 1001,
+      "_id": "0ba8dd7f-8116-48d6-8b7d-991691a4ba69",
+      "stationid": "b23061d9-aabd-4e9a-af75-228618925ca3",
+      "timeStamp": 1693077046150
+    },
+    {
+      "code": 300,
+      "temp": 12,
+      "windSpeed": 7,
+      "windDirection": 90,
+      "pressure": 1002,
+      "_id": "da007e33-f08e-4fb9-b550-6e7dc5809046",
+      "stationid": "b23061d9-aabd-4e9a-af75-228618925ca3",
+      "timeStamp": 1693077075668
     }
   ]
 }

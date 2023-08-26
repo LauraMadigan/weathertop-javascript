@@ -14,7 +14,9 @@
     valueD="°F" valueE="Max: " 
     valueF=latestReading.maxTemp 
     valueH="Min: " 
-    valueI=latestReading.minTemp iconClass="fa fa-temperature-half"}}
+    valueI=latestReading.minTemp 
+    valueL=latestReading.temperatureTrendIcon
+    iconClass="fa fa-temperature-half"}}
   <!--Wind card-->
   {{> card title="Wind" 
     valueA=latestReading.beaufort
@@ -26,6 +28,7 @@
     valueI=latestReading.maxWindSpeed
     valueJ="Min: "
     valueK=latestReading.minWindSpeed
+    valueL=latestReading.windTrendIcon
     iconClass="wi wi-wind fa-3x"}}
   <!--Air pressure card-->
   {{> card title="Pressure"
@@ -35,5 +38,6 @@
     valueD=latestReading.maxPressure
     valueE="Min: "
     valueF=latestReading.minPressure
+    valueL=latestReading.pressureTrendIcon
     iconClass="fa fa-gauge"}}
 </div>

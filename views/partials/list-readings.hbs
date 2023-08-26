@@ -9,6 +9,7 @@
       <th>Wind (Bft)</th>
       <th>Wind Direction</th>
       <th>Pressure (hPa)</th>
+      <th>Delete Reading</th>
     </tr>
   </thead>
   <tbody>
@@ -31,6 +32,9 @@
       </td>
       <td>
         {{pressure}}
+      </td>
+      <td>
+        <a href="/station/{{../station._id}}/deletereading/{{_id}}"><span class="icon has-text-danger"><i class="fas fa-trash"></i>
       </td>
     </tr>
     {{/each}}

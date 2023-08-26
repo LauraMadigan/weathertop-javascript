@@ -1,7 +1,7 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
 import { beaufort, labelWindDirection, windChill, CelsiusToFarenheit, describeConditions } from "../utils/conversions.js";
-import { min, max, getValuesForKey } from "../utils/analytics.js";
+import { min, max, getValuesForKey, getTrendIcon } from "../utils/analytics.js";
 import { iconForCode } from "../utils/icons.js";
 
 import { readingStore } from "./reading-store.js";
@@ -41,6 +41,9 @@ export const stationStore = {
       list.latestReading.minWindSpeed = min(getValuesForKey(list.readings, 'windSpeed'));
       list.latestReading.maxPressure = max(getValuesForKey(list.readings, 'pressure'));
       list.latestReading.minPressure = min(getValuesForKey(list.readings, 'pressure'));
+      list.latestReading.pressureTrendIcon = getTrendIcon('pressure', list.readings);
+      list.latestReading.temperatureTrendIcon = getTrendIcon('temp', list.readings);
+      list.latestReading.windTrendIcon = getTrendIcon('windSpeed', list.readings);
     }
 
     return list;
