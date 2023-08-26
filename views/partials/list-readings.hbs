@@ -3,6 +3,7 @@
 <table class="table is-fullwidth">
   <thead>
     <tr>
+      <th>Time of Reading</th>
       <th>Weather Code</th>
       <th>Temperature (°C)</th>
       <th>Wind (Bft)</th>
@@ -13,6 +14,9 @@
   <tbody>
     {{#each station.readings}}
     <tr>
+      <td>
+        {{dateFormat timeStamp "MMM Do YYYY, h:mm:ss a"}}
+      </td>
       <td>
         {{code}}
       </td>

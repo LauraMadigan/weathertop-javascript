@@ -13,6 +13,7 @@ export const readingStore = {
     await db.read();
     reading._id = v4();
     reading.stationid = stationId;
+    reading.timeStamp = new Date().getTime();
     db.data.readings.push(reading);
     await db.write();
     return reading;
