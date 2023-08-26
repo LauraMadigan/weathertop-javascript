@@ -17,6 +17,11 @@ export const userStore = {
     return user;
   },
 
+  async updateUser(user) {
+    await db.write();
+    return user;
+  },
+
   async getUserById(id) {
     await db.read();
     return db.data.users.find((user) => user._id === id);

@@ -1,0 +1,46 @@
+{{> menu active="profile"}}
+
+<section>
+  <div class="columns">
+    <div class="column is-half">
+      <h2 class="title has-text-left">
+        Welcome, {{user.firstName}}
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <h1 class="title is-4">Edit your account details:</h1>
+  {{#if success}}
+  <div class="notification is-success is-light">
+    <button class="delete"></button>
+    Your details have been successfully updated.
+  </div>
+  {{/if}}
+
+  <form action="/profile/update" method="POST">
+    <label class="label">Name</label>
+    <div class="field is-horizontal">
+      <div class="field-body">
+        <div class="field">
+          <input class="input" type="text" placeholder="Enter first name" name="firstName" value="{{user.firstName}}">
+        </div>
+        <div class="field">
+          <input class="input" type="text" placeholder="Enter last name" name="lastName" value="{{user.lastName}}">
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Email</label> <input class="input" type="text" placeholder="Enter email" name="email" value="{{user.email}}">
+    </div>
+    <div class="field">
+      <label class="label">Enter new password</label> <input class="input" type="password" placeholder="Enter your new password" name="password">
+    </div>
+    <div class="field">
+      <label class="label">Confirm new password</label> <input class="input" type="password" placeholder="Re-enter your new password" name="passwordConfirmation">
+    </div>
+    <div class="field is-grouped">
+      <button class="button is-link">Update</button>
+    </div>
+  </form>
+</section>
