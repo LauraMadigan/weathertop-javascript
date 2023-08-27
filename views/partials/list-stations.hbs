@@ -1,6 +1,9 @@
 {{#each stations}}
 <div class="box box-link-hover-shadow">
   <h2 class="title">{{name}}</h2>
+
+  {{> latest-readings station=this }}
+
   <a class="button" href="/station/{{_id}}">
     <span class="icon"><i class="fa fa-eye"></i></span>
   </a>

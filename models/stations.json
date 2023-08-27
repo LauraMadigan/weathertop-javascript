@@ -15,11 +15,32 @@
       "_id": "80028b8a-a6e3-4e4f-9938-3d2cca918fd9"
     },
     {
-      "name": "Marge's Station",
-      "lat": "32124",
-      "long": "53567",
+      "name": "Tramore",
+      "lat": "52.1623500",
+      "long": "-7.1524400",
       "userid": "65304f62-54b6-4a12-b86c-63fa392da6c1",
-      "_id": "ed1199c9-df2a-4b6b-b8f0-49a77f4c3456"
+      "_id": "0963af59-01dc-4ac6-9762-e061ea4fe230"
+    },
+    {
+      "name": "new ross",
+      "lat": "43",
+      "long": "43",
+      "userid": "65304f62-54b6-4a12-b86c-63fa392da6c1",
+      "_id": "191093be-c5c5-470e-8cea-755f0799eda0"
+    },
+    {
+      "name": "ardmore",
+      "lat": "",
+      "long": "",
+      "userid": "65304f62-54b6-4a12-b86c-63fa392da6c1",
+      "_id": "dc1619f2-5299-4fa8-96bd-63ef464dabb8"
+    },
+    {
+      "name": "Ardmore",
+      "lat": "",
+      "long": "",
+      "userid": "65304f62-54b6-4a12-b86c-63fa392da6c1",
+      "_id": "3e9a93c0-2a9c-4f1f-ac65-99956d232dec"
     }
   ]
 }

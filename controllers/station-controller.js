@@ -6,7 +6,7 @@ export const stationController = {
     const station = await stationStore.getStationById(request.params.id);
     const viewData = {
       title: "Station",
-      station: station,
+      station: station
     };
     if (station.readings.length > 0) {
       response.render("station-view", viewData);

@@ -45,7 +45,7 @@ export const accountsController = {
     }
   },
 
-  async getLoggedInUser(request) { //TODO: delete if not required?
+  async getLoggedInUser(request) {
     const userEmail = request.cookies.user;
     return await userStore.getUserByEmail(userEmail);
   },

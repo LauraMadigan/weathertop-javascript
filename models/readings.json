@@ -1,4 +1,45 @@
 {
   "file": "./models/readings.json",
-  "readings": []
+  "readings": [
+    {
+      "code": 700,
+      "temp": 8,
+      "windSpeed": 1,
+      "windDirection": 90,
+      "pressure": 1000,
+      "_id": "0a6944f0-d868-48de-885d-2b9e3b32b7b8",
+      "stationid": "bd3ade48-37af-47ab-a033-aae19c07c287",
+      "timeStamp": 1693143916769
+    },
+    {
+      "code": 200,
+      "temp": 0.5,
+      "windSpeed": 3.5,
+      "windDirection": 120,
+      "pressure": 999,
+      "_id": "234d9cdc-fcb8-4393-8e5c-20b8c9f365a8",
+      "stationid": "bd3ade48-37af-47ab-a033-aae19c07c287",
+      "timeStamp": 1693143948500
+    },
+    {
+      "code": 800,
+      "temp": 0.5,
+      "windSpeed": 3.5,
+      "windDirection": 220,
+      "pressure": 1001,
+      "_id": "e5d9b901-583a-4d12-af41-76596cbec3d0",
+      "stationid": "0963af59-01dc-4ac6-9762-e061ea4fe230",
+      "timeStamp": 1693144115018
+    },
+    {
+      "code": 600,
+      "temp": 6,
+      "windSpeed": 2,
+      "windDirection": 200,
+      "pressure": 1004,
+      "_id": "f22e0632-8675-4b76-8000-a6208f7321e4",
+      "stationid": "0963af59-01dc-4ac6-9762-e061ea4fe230",
+      "timeStamp": 1693144145436
+    }
+  ]
 }

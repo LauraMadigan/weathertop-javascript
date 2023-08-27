@@ -11,6 +11,10 @@ const db = initStore("stations");
 export const stationStore = {
   async getAllStations() {
     await db.read();
+    let stations = db.data.stations;
+    stations.forEach(async station => {
+      await latestReadingsForStation(station);
+    });
     return db.data.stations;
   },
 
@@ -24,29 +28,9 @@ export const stationStore = {
 
   async getStationById(id) {
     await db.read();
-    const list = db.data.stations.find((station) => station._id === id);
-    list.readings = await readingStore.getReadingsByStationId(list._id);
-    list.latestReading = await readingStore.getLatestReadingByStationId(list._id);
-
-    if (list.latestReading) {
-      list.latestReading.beaufort = beaufort(list.latestReading.windSpeed);
-      list.latestReading.labelWindDirection = labelWindDirection(list.latestReading.windDirection);
-      list.latestReading.windChill = windChill(list.latestReading.temp, list.latestReading.windSpeed);
-      list.latestReading.tempF = CelsiusToFarenheit(list.latestReading.temp);
-      list.latestReading.condition = describeConditions(list.latestReading.code);
-      list.latestReading.iconClass = iconForCode(list.latestReading.code);
-      list.latestReading.maxTemp = max(getValuesForKey(list.readings, 'temp'));
-      list.latestReading.minTemp = min(getValuesForKey(list.readings, 'temp'));
-      list.latestReading.maxWindSpeed = max(getValuesForKey(list.readings, 'windSpeed'));
-      list.latestReading.minWindSpeed = min(getValuesForKey(list.readings, 'windSpeed'));
-      list.latestReading.maxPressure = max(getValuesForKey(list.readings, 'pressure'));
-      list.latestReading.minPressure = min(getValuesForKey(list.readings, 'pressure'));
-      list.latestReading.pressureTrendIcon = getTrendIcon('pressure', list.readings);
-      list.latestReading.temperatureTrendIcon = getTrendIcon('temp', list.readings);
-      list.latestReading.windTrendIcon = getTrendIcon('windSpeed', list.readings);
-    }
-
-    return list;
+    let station = db.data.stations.find((station) => station._id === id);
+    await latestReadingsForStation(station);
+    return station;
   },
 
   async deleteStationById(id) {
@@ -64,7 +48,7 @@ export const stationStore = {
 
   async deleteStationsForUser(userId) {
     await db.read();
-    let userStations =  db.data.stations.filter((station) => station.userid === userId);
+    let userStations = db.data.stations.filter((station) => station.userid === userId);
     userStations.forEach(station => {
       this.deleteStationById(station._id);
     });
@@ -77,7 +61,52 @@ export const stationStore = {
 
   async getStationsByUserId(userid) {
     await db.read();
-    return db.data.stations.filter((station) => station.userid === userid);
-  },
+    let stations = db.data.stations.filter((station) => station.userid === userid);
+    stations = sortStationsAlphabetically(stations);
+    stations.forEach(async station => {
+      await latestReadingsForStation(station);
+    });
+    return stations;
+  }
 
 };
+
+async function latestReadingsForStation(station) {
+  station.readings = await readingStore.getReadingsByStationId(station._id);
+  station.latestReading = await readingStore.getLatestReadingByStationId(station._id);
+
+  if (station.latestReading) {
+    station.latestReading.beaufort = beaufort(station.latestReading.windSpeed);
+    station.latestReading.labelWindDirection = labelWindDirection(station.latestReading.windDirection);
+    station.latestReading.windChill = windChill(station.latestReading.temp, station.latestReading.windSpeed);
+    station.latestReading.tempF = CelsiusToFarenheit(station.latestReading.temp);
+    station.latestReading.condition = describeConditions(station.latestReading.code);
+    station.latestReading.iconClass = iconForCode(station.latestReading.code);
+    station.latestReading.maxTemp = max(getValuesForKey(station.readings, 'temp'));
+    station.latestReading.minTemp = min(getValuesForKey(station.readings, 'temp'));
+    station.latestReading.maxWindSpeed = max(getValuesForKey(station.readings, 'windSpeed'));
+    station.latestReading.minWindSpeed = min(getValuesForKey(station.readings, 'windSpeed'));
+    station.latestReading.maxPressure = max(getValuesForKey(station.readings, 'pressure'));
+    station.latestReading.minPressure = min(getValuesForKey(station.readings, 'pressure'));
+    station.latestReading.pressureTrendIcon = getTrendIcon('pressure', station.readings);
+    station.latestReading.temperatureTrendIcon = getTrendIcon('temp', station.readings);
+    station.latestReading.windTrendIcon = getTrendIcon('windSpeed', station.readings);
+  }
+  return station;
+}
+
+function sortStationsAlphabetically(stations) {
+  stations.sort(function (a, b) {
+    // here a , b is whole object, you can access its property
+    //convert both to lowercase
+    let x = a.name.toLowerCase();
+    let y = b.name.toLowerCase();
+
+    //compare the word which is comes first
+    if (x > y) { return 1; }
+    if (x < y) { return -1; }
+    return 0;
+  });
+
+  return stations;
+}
