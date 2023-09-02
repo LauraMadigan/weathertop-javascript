@@ -1,16 +1,17 @@
-<div class="ui segment" id="chart"></div>
+{{!-- Unique div ID for each graph (trendId) --}}
+<div class="ui segment" id="{{trendId}}"></div>
 <script>
-  const data = {
+  const {{trendId}}data = { // data variable also needs to be unique per graph (e.g. windSpeeddata)
     labels: [
-      {{#each station.graphData.trendLabels}}
+      {{#each trendLabels}}
         "{{this}}",
       {{/each}}
     ],
     datasets: [
       {
-        name: "Temperature", type: "line",
+        name: "{{graphTitle}}", type: "line",
         values: [
-          {{#each station.graphData.tempTrend}}
+          {{#each graphData}}
             {{this}},
           {{/each}}
         ]
@@ -18,9 +19,9 @@
     ]
   }
 
-  const chart = new frappe.Chart("#chart", {
-    title: "Temperature Trend",
-    data: data,
+  const {{trendId}}chart = new frappe.Chart("#{{trendId}}", { // chart variable, and the chart div ID, also need to be unique
+    title: "{{graphTitle}} Trend",
+    data: {{trendId}}data,
     type: 'line',
     height: 250,
   })

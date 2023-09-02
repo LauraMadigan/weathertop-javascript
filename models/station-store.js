@@ -98,10 +98,14 @@ async function latestReadingsForStation(station) {
 
 async function generateGraphData(readings) {
   let report = {};
-  report.tempTrend = [];
   report.trendLabels = [];
+  report.tempTrend = [];
+  report.pressureTrend = [];
+  report.windSpeedTrend = [];
   readings.forEach(reading => {
     report.tempTrend.push(reading.temp);
+    report.pressureTrend.push(reading.pressure);
+    report.windSpeedTrend.push(reading.windSpeed);
     const date = new Date(reading.timeStamp);
     report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}` );
   });

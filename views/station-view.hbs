@@ -8,7 +8,6 @@
   {{> add-reading}}
 </section>
 
-{{> graph}}
-
-
-
+{{> graph trendId="temperature" graphTitle="Temperature" graphData=station.graphData.tempTrend trendLabels=station.graphData.trendLabels }}
+{{> graph trendId="windSpeed" graphTitle="Wind Speed" graphData=station.graphData.windSpeedTrend trendLabels=station.graphData.trendLabels }}
+{{> graph trendId="pressure" graphTitle="Pressure"  graphData=station.graphData.pressureTrend trendLabels=station.graphData.trendLabels }}
