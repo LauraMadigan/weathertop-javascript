@@ -1,16 +1,24 @@
 import { stationStore } from "../models/station-store.js";
+import { readingStore } from "../models/reading-store.js";
 import { accountsController } from "./accounts-controller.js";
+import { stationController, getGeneratedReading } from "./station-controller.js";
 
 export const dashboardController = {
   async index(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
+    let stations = await stationStore.getStationsByUserId(loggedInUser._id);
     const viewData = {
       title: "Station Dashboard",
-      stations: await stationStore.getStationsByUserId(loggedInUser._id),
+      stations: stations,
       user: loggedInUser
     };
     console.log("dashboard rendering");
-    response.render("dashboard-view", viewData);
+    if (stations.length > 0) {
+      response.render("dashboard-view", viewData);
+    } else {
+      // no stations
+      response.render("dashboard-view-no-stations", viewData);
+    }
   },
 
   async addStation(request, response) {
@@ -22,7 +30,9 @@ export const dashboardController = {
       userid: loggedInUser._id
     };
     console.log(`adding station ${newStation.name}`);
-    await stationStore.addStation(newStation);
+    let station = await stationStore.addStation(newStation);
+    let generatedReading = await getGeneratedReading(station);
+    await readingStore.addReading(station._id, generatedReading);
     response.redirect("/dashboard");
   },
 };

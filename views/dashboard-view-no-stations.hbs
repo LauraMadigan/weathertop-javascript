@@ -1,0 +1,14 @@
+{{> menu active="dashboard"}}
+
+<section>
+  <h2 class="title has-text-left">
+    {{user.firstName}}'s Stations:
+  </h2>
+  <p>You have no stations, yet. Click the Add Station button below to get started.</p>
+</section>
+
+<section class="section">
+  {{> add-station}}
+</section>
+
+{{> map}}

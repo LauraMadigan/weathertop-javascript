@@ -21,6 +21,13 @@
       "email": "lisa@simpson.com",
       "password": "password",
       "_id": "65febf8f-3c9f-4556-acb0-5e06a46584be"
+    },
+    {
+      "firstName": "Laura",
+      "lastName": "Madigan",
+      "email": "laura@madigan.org",
+      "password": "password",
+      "_id": "79263b03-6fd1-459e-9e95-df90e8611751"
     }
   ]
 }
