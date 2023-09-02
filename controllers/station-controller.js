@@ -42,10 +42,8 @@ export const stationController = {
     const result = await axios.get(requestUrl);
     if (result.status == 200) {
       const data = result.data.current;
-      let code = Number(data.weather[0].id);
-      let roundedCode = Math.round(code / 100) * 100;
       const newReading = {
-        code: roundedCode,
+        code: Number(data.weather[0].id),
         temp: Number(data.temp),
         windSpeed: Number(data.wind_speed),
         windDirection: Number(data.wind_deg),

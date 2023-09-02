@@ -14,6 +14,8 @@ export const readingStore = {
     reading._id = v4();
     reading.stationid = stationId;
     reading.timeStamp = new Date().getTime();
+    let roundedCode = Math.round(reading.code / 100) * 100;
+    reading.code = roundedCode;
     db.data.readings.push(reading);
     await db.write();
     return reading;
