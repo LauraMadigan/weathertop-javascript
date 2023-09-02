@@ -2,7 +2,7 @@
 
 * **Name**: Laura Madigan
 * **Student Number**: 20104298
-* **Github URL**: https://github.com/LauraMadigan/weathertop-v2/
+* **Github URL**: https://github.com/LauraMadigan/weathertop-javascript/
 * **Deploy URL**: https://bottlenose-dusty-ship.glitch.me/
 * Version: Release 4
 * Developed in Javascript using the ExpressJS framework
