@@ -1,30 +1,29 @@
 {{> menu active="dashboard"}}
 
 <section>
-  <div class="columns">
-    <div class="column is-half">
-      <h2 class="title has-text-left">
-        Welcome to Weathertop
-      </h2>
-      <p class="has-text-left">
-        This is the companion app for the WeatherTop consumer weather station kits.<br>
-        This app allows you to:
-      </p>
-      <ul>
-        <li>View and add WeatherTop stations</li>
-        <li>Quickly view and add readings to the stations</li>
-      </ul>
-      <br>
-    </div>
-    <div class="column is-half">
-      <figure class="image">
-        <img src="/images/weather-station.png" alt="weather station">
-      </figure>
-    </div>
-  </div>
+  <h2 class="title has-text-left">
+    {{user.firstName}}'s Stations:
+  </h2>
+  <p>Your stations are listed alphabetically below. The cards show the latest weather for each of your stations.</p>
 </section>
 
 <section class="section">
   {{> list-stations}}
   {{> add-station}}
 </section>
+
+<div id="map"></div>
+<script>
+  var map = L.map('map').setView([52.275563, -7.129494], 10); // Center map on Waterford
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+{{#each stations}}
+  L.marker([{{this.lat}}, {{this.long}}]).addTo(map)
+    .bindPopup('{{this.name}}')
+    .openPopup();
+{{/each}}
+
+</script>

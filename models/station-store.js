@@ -74,6 +74,7 @@ export const stationStore = {
 async function latestReadingsForStation(station) {
   station.readings = await readingStore.getReadingsByStationId(station._id);
   station.latestReading = await readingStore.getLatestReadingByStationId(station._id);
+  station.graphData = await generateGraphData(station.readings);
 
   if (station.latestReading) {
     station.latestReading.beaufort = beaufort(station.latestReading.windSpeed);
@@ -93,6 +94,19 @@ async function latestReadingsForStation(station) {
     station.latestReading.windTrendIcon = getTrendIcon('windSpeed', station.readings);
   }
   return station;
+}
+
+async function generateGraphData(readings) {
+  let report = {};
+  report.tempTrend = [];
+  report.trendLabels = [];
+  readings.forEach(reading => {
+    report.tempTrend.push(reading.temp);
+    const date = new Date(reading.timeStamp);
+    report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}` );
+  });
+  // console.log('report', report);
+  return report;
 }
 
 function sortStationsAlphabetically(stations) {

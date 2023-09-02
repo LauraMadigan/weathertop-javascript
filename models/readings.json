@@ -180,6 +180,16 @@
       "_id": "95394e3f-1ffa-4e4a-b5ba-be25a472612c",
       "stationid": "1c43851e-3101-4e53-acae-31a052563127",
       "timeStamp": 1693588641954
+    },
+    {
+      "code": 800,
+      "temp": 15.94,
+      "windSpeed": 2.06,
+      "windDirection": 210,
+      "pressure": 1013,
+      "_id": "e91aacb4-10eb-4b8a-b086-239a27bcc123",
+      "stationid": "1c43851e-3101-4e53-acae-31a052563127",
+      "timeStamp": 1693597205721
     }
   ]
 }

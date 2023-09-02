@@ -10,7 +10,7 @@
   </div>
 </section>
 <section class="section">
-  <h1 class="title is-4">Edit your account details:</h1>
+  <h1 class="title is-4">You may update your account details below:</h1>
   {{#if success}}
   <div class="notification is-success is-light">
     <button class="delete"></button>
@@ -19,7 +19,7 @@
   {{/if}}
 
   <form action="/profile/update" method="POST">
-    <label class="label">Name</label>
+    <label class="label">Edit your name</label>
     <div class="field is-horizontal">
       <div class="field-body">
         <div class="field">
@@ -31,24 +31,22 @@
       </div>
     </div>
     <div class="field">
-      <label class="label">Email</label> <input class="input" type="text" placeholder="Enter email" name="email"
+      <label class="label">Edit your email address</label> <input class="input" type="text" placeholder="Enter email" name="email"
         value="{{user.email}}">
     </div>
     <div class="field">
-      <label class="label">Enter new password</label> <input class="input" type="password"
+      <label class="label">Choose a new password</label> <input class="input" type="password"
         placeholder="Enter your new password" name="password">
     </div>
     <div class="field">
-      <label class="label">Confirm new password</label> <input class="input" type="password"
+      <label class="label">Confirm your new password</label> <input class="input" type="password"
         placeholder="Re-enter your new password" name="passwordConfirmation">
     </div>
     <div class="field is-grouped">
       <button class="button is-link">Update</button>
     </div>
   </form>
-
   <br>
-
   <div class="field">
     <label class="label">Delete my account</label>
     <a class="button is-link is-danger" href="/profile/delete" onclick="return confirm('Are you sure you want to delete your account?');">Delete My Account</a>

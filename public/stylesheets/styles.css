@@ -47,3 +47,5 @@ a.navbar-item:hover {
     position: absolute;
     bottom: 1em;
 }
+
+#map { height: 580px; }
