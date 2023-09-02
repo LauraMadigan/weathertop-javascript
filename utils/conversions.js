@@ -14,7 +14,7 @@ export function describeConditions(code) {
 }
 
 export function CelsiusToFarenheit(temperature) {
-  return temperature * 9 / 5 + 32;
+  return (temperature * 9 / 5 + 32).toFixed(2);;
 }
 
 export function beaufort(windSpeed) {
