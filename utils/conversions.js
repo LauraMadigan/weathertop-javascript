@@ -57,7 +57,7 @@ export function labelWindDirection(degrees) {
   else if (degrees >= 146.25 && degrees < 168.75) return "SSE";
   else if (degrees >= 168.75 && degrees < 191.25) return "South";
   else if (degrees >= 191.25 && degrees < 213.75) return "SSW";
-  else if (degrees >= 313.75 && degrees < 236.25) return "SW";
+  else if (degrees >= 213.75 && degrees < 236.25) return "SW";
   else if (degrees >= 236.25 && degrees < 258.75) return "WSW";
   else if (degrees >= 258.75 && degrees < 281.25) return "West";
   else if (degrees >= 281.25 && degrees < 303.75) return "WNW";
